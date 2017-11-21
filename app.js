@@ -8,6 +8,7 @@ var session = require('express-session');
 var FileStore = require('session-file-store')(session);
 var passport = require('passport');
 var authenticate = require('./authenticate');
+var config = require('./config');
 
 var index = require('./routes/index');
 const leaderRouter = require('./routes/leaderRouter');
@@ -19,7 +20,7 @@ var users = require('./routes/users');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const url = "mongodb://localhost:27017/conFusion";
+const url = config.mongoUrl;
 const connect = mongoose.connect(url, {
   useMongoClient: true
 });
@@ -42,33 +43,33 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser('123456789'));
-app.use(session({
-  name: 'session-id',
-  secret: '123456789',
-  saveUninitialized: false,
-  resave: false,
-  store: new FileStore()
-}));
+// app.use(session({
+//   name: 'session-id',
+//   secret: '123456789',
+//   saveUninitialized: false,
+//   resave: false,
+//   store: new FileStore()
+// }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.session());
 
-function auth(req, res, next) {
-
-  if (!req.user) {
-    var err = new Error('You Are Not Auth');
-    err.status = 401;
-    return next(err);
-  }
-  else {
-      next();
-  }
-}
+// function auth(req, res, next) {
+//
+//   if (!req.user) {
+//     var err = new Error('You Are Not Auth');
+//     err.status = 401;
+//     return next(err);
+//   }
+//   else {
+//       next();
+//   }
+// }
 
 app.use('/', index);
 app.use('/users', users);
 
-app.use(auth);
+// app.use(auth);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

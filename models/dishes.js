@@ -16,8 +16,8 @@ const commentSchema = new Schema({
         required: true
     },
     author: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true
@@ -62,3 +62,6 @@ const dishSchema = new Schema({
 var Dishes = mongoose.model('Dish', dishSchema);
 
 module.exports = Dishes;
+
+// 5a16aa4c743a1e2d10802617
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YTE2YTllYzc0M2ExZTJkMTA4MDI2MTYiLCJpYXQiOjE1MTE0MzQ3NTYsImV4cCI6MTUxMTQzODM1Nn0.Z2jYwuD_jpjNN4RBbfRmAZuR0Cqbil9LFJ13ulTu7jA

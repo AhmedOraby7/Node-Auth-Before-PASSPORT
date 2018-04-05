@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26666509-cb4d-458b-b3e3-a963370193ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="ConfusionServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -266,12 +265,12 @@
       <workItem from="1517235533699" duration="64000" />
       <workItem from="1522496278166" duration="712000" />
       <workItem from="1522500319921" duration="98000" />
-      <workItem from="1522931590395" duration="120000" />
+      <workItem from="1522931590395" duration="297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124016000" />
+    <option name="totallyTimeSpent" value="124193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
